@@ -48,6 +48,9 @@
     "type": "git",
     "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
   },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
