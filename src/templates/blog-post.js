@@ -1,14 +1,14 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
 import Image from 'gatsby-image'
-
+import { MDXRenderer } from 'gatsby-plugin-mdx'
 import Bio from '../components/bio'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import { rhythm } from '../utils/typography'
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
-  const post = data.markdownRemark
+  const post = data.mdx
   const siteTitle = data.site.siteMetadata.title
   const image = post.frontmatter.image
   const { previous, next } = pageContext
@@ -37,7 +37,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
             {post.frontmatter.title}
           </h1>
         </header>
-        <section dangerouslySetInnerHTML={{ __html: post.html }} />
+        <MDXRenderer>{post.body}</MDXRenderer>
         <hr
           style={{
             marginBottom: rhythm(1),
@@ -87,10 +87,10 @@ export const pageQuery = graphql`
         title
       }
     }
-    markdownRemark(fields: { slug: { eq: $slug } }) {
+    mdx(fields: { slug: { eq: $slug } }) {
       id
       excerpt(pruneLength: 160)
-      html
+      body
       frontmatter {
         title
         description
