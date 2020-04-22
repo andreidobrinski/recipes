@@ -6,7 +6,7 @@ module.exports = {
       summary: `A web developer that likes to cook.`,
     },
     description: `A recipe site with only ingredients and steps.`,
-    siteUrl: ``,
+    siteUrl: `https://andreidobrinski.com/recipes`,
     social: {
       twitter: `andreidobrinski`,
     },
