@@ -34,6 +34,7 @@ const StyledLink = styled(Link)`
   box-shadow: none;
   border-radius: 8px;
   overflow: hidden;
+  margin-bottom: 16px;
   .gatsby-image-wrapper,
   h2 {
     grid-area: 1 / 1;
