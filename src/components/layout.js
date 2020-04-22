@@ -29,7 +29,7 @@ const Layout = ({ location, title, children }) => {
     )
   } else {
     header = (
-      <h3
+      <h2
         style={{
           marginTop: 0,
         }}
@@ -43,7 +43,7 @@ const Layout = ({ location, title, children }) => {
         >
           {title}
         </Link>
-      </h3>
+      </h2>
     )
   }
   return (

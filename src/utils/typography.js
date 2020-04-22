@@ -21,8 +21,11 @@ Wordpress2016.overrideThemeStyles = () => {
     'a.gatsby-resp-image-link': {
       boxShadow: `none`,
     },
-    'h1, h2, h3, li, footer, a': {
+    'h1, h2, h3, li, footer, a, p': {
       fontFamily: fonts.join(','),
+    },
+    h3: {
+      color: 'rgba(0,0,0,0.8)',
     },
   }
 }
