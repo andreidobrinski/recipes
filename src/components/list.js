@@ -28,7 +28,7 @@ const ListItem = ({ name }) => {
 const Label = styled.label`
   text-decoration: ${(props) => (props.checked ? 'line-through' : 'none')};
   display: flex;
-  align-items: center;
+  align-items: baseline;
   input {
     margin-right: 8px;
   }
