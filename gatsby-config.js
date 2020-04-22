@@ -13,6 +13,17 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `Hind`,
+            variants: [`400`, `700`],
+          },
+        ],
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/content/blog`,
@@ -61,11 +72,11 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `Recipes`,
+        short_name: `Recipes`,
         start_url: `/`,
         background_color: `#ffffff`,
-        theme_color: `#663399`,
+        theme_color: `#ffffff`,
         display: `minimal-ui`,
         icon: `content/assets/gatsby-icon.png`,
       },
