@@ -44,7 +44,7 @@ const StyledLink = styled(Link)`
     z-index: 1;
     margin-top: auto;
     margin-bottom: 0;
-    padding: 32px 32px 16px 16px;
+    padding: 32px 24px 16px 24px;
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
   }
 `

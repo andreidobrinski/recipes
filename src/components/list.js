@@ -5,7 +5,9 @@ const List = ({ children }) => {
   const listItems = children.map((child) => (
     <ListItem name={child} key={child} />
   ))
-  return <ul style={{ listStyleType: 'none' }}>{listItems}</ul>
+  return (
+    <ul style={{ listStyleType: 'none', marginLeft: '16px' }}>{listItems}</ul>
+  )
 }
 
 const ListItem = ({ name }) => {
