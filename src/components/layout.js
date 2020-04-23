@@ -58,13 +58,15 @@ const Layout = ({ location, title, children }) => {
       <header>{header}</header>
       <main>{children}</main>
       <footer style={{ textAlign: 'end', marginTop: '40px' }}>
-        Made with{' '}
+        <a href="https://andreidobrinski.com">Made</a> with{' '}
         <span role="img" aria-label="love">
           ❤️
         </span>{' '}
-        by
+        in
         {` `}
-        <a href="https://andreidobrinski.com">Andrei Dobrinski</a>
+        <span role="img" aria-label="canada">
+          🇨🇦
+        </span>
       </footer>
     </div>
   )
