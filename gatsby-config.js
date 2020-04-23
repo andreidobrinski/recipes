@@ -72,7 +72,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Recipes`,
+        name: `Check-it Recipes`,
         short_name: `Recipes`,
         start_url: `/`,
         background_color: `#ffffff`,
