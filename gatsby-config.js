@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `✅ Check-it Recipes`,
+    title: `✅ Recipes`,
     author: {
       name: `Andrei Dobrinski`,
       summary: `A web developer that likes to cook.`,
@@ -72,7 +72,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Check-it Recipes`,
+        name: `Recipes`,
         short_name: `Recipes`,
         start_url: `/`,
         background_color: `#ffffff`,
