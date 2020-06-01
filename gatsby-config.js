@@ -11,6 +11,7 @@ module.exports = {
       twitter: `andreidobrinski`,
     },
   },
+  pathPrefix: '/recipes',
   plugins: [
     {
       resolve: `gatsby-plugin-prefetch-google-fonts`,
