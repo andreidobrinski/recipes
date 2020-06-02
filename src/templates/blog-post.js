@@ -47,7 +47,7 @@ const BlogPostTemplate = ({ data, location }) => {
           }}
         />
         <footer>
-          <Bio />
+          <Bio name={post.frontmatter.authorName} link={post.frontmatter.authorLink} />
         </footer>
       </article>
       <Link to="/">Back to All Recipes</Link>
@@ -71,6 +71,8 @@ export const pageQuery = graphql`
       frontmatter {
         title
         description
+        authorName
+        authorLink
         image {
           childImageSharp {
             fluid(maxWidth: 1024, quality: 100) {
