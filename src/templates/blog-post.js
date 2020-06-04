@@ -12,7 +12,7 @@ import { rhythm } from '../utils/typography'
 const BlogPostTemplate = ({ data, location }) => {
   const post = data.mdx
   const siteTitle = data.site.siteMetadata.title
-  const image = post.frontmatter.image
+  const { image } = post.frontmatter
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -47,7 +47,10 @@ const BlogPostTemplate = ({ data, location }) => {
           }}
         />
         <footer>
-          <Bio name={post.frontmatter.authorName} link={post.frontmatter.authorLink} />
+          <Bio
+            name={post.frontmatter.authorName}
+            link={post.frontmatter.authorLink}
+          />
         </footer>
       </article>
       <Link to="/">Back to All Recipes</Link>

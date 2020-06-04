@@ -31,7 +31,7 @@ Here is an example of how to use the checklist component with MDX
   {[
     'Item one',
     'Item two',
-    'Item three'
+    'Item three',
   ]}
 </List>
 ```
