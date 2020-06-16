@@ -16,10 +16,7 @@ const BlogPostTemplate = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO
-        title={post.frontmatter.title}
-        description={post.frontmatter.description || post.excerpt}
-      />
+      <SEO title={post.frontmatter.title} />
       <article>
         <header>
           {image && (
@@ -73,7 +70,6 @@ export const pageQuery = graphql`
       body
       frontmatter {
         title
-        description
         # authorName
         # authorLink
         image {
