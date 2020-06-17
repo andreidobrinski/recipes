@@ -14,7 +14,7 @@ const BlogIndex = ({ data, location }) => {
       <SEO title="All Recipes" />
       {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug
-        const image = node.frontmatter.image
+        const { image } = node.frontmatter
         return (
           <StyledLink to={node.fields.slug} key={node.fields.slug}>
             {image && <Image fluid={image.childImageSharp.fluid} alt="test" />}
