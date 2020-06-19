@@ -5,10 +5,15 @@ exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
 
   const blogPost = path.resolve(`./src/templates/blog-post.js`)
-  const result = await graphql(
-    `
+
+  const query = `
       {
         allMdx(
+          ${
+            process.env.NODE_ENV === 'production'
+              ? 'filter: { frontmatter: { draft: { eq: false } } }'
+              : ''
+          }
           sort: { fields: [frontmatter___date], order: DESC }
           limit: 1000
         ) {
@@ -25,7 +30,7 @@ exports.createPages = async ({ graphql, actions }) => {
         }
       }
     `
-  )
+  const result = await graphql(query)
 
   if (result.errors) {
     throw result.errors

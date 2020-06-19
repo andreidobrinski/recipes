@@ -13,6 +13,8 @@ const BlogIndex = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <SEO title="All Recipes" />
       {posts.map(({ node }) => {
+        if (node.frontmatter.draft && process.env.NODE_ENV === 'production')
+          return false
         const title = node.frontmatter.title || node.fields.slug
         const { image } = node.frontmatter
         return (
@@ -59,12 +61,12 @@ export const pageQuery = graphql`
     allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {
-          excerpt
           fields {
             slug
           }
           frontmatter {
             title
+            draft
             image {
               childImageSharp {
                 fluid(maxWidth: 1024, quality: 100) {
