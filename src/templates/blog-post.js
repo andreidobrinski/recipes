@@ -69,8 +69,8 @@ export const pageQuery = graphql`
       body
       frontmatter {
         title
-        # authorName
-        # authorLink
+        authorName
+        authorLink
         image {
           childImageSharp {
             fluid(maxWidth: 1024, quality: 100) {
