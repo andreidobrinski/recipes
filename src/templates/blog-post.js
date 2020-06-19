@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { Link, graphql } from 'gatsby'
 import Image from 'gatsby-image'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
@@ -82,3 +83,27 @@ export const pageQuery = graphql`
     }
   }
 `
+
+BlogPostTemplate.propTypes = {
+  data: PropTypes.shape({
+    mdx: PropTypes.shape({
+      body: PropTypes.string,
+      frontmatter: PropTypes.shape({
+        title: PropTypes.string,
+        authorName: PropTypes.string,
+        authorLink: PropTypes.string,
+        image: PropTypes.shape({
+          childImageSharp: PropTypes.shape({
+            fluid: PropTypes.object,
+          }),
+        }),
+      }),
+    }),
+    site: PropTypes.shape({
+      siteMetadata: PropTypes.shape({
+        title: PropTypes.string,
+      }),
+    }),
+  }),
+  location: PropTypes.object,
+}

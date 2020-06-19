@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { Link, graphql } from 'gatsby'
 import Image from 'gatsby-image'
 import styled from 'styled-components'
@@ -80,3 +81,17 @@ export const pageQuery = graphql`
     }
   }
 `
+
+BlogIndex.propTypes = {
+  data: PropTypes.shape({
+    allMdx: PropTypes.shape({
+      edges: PropTypes.array,
+    }),
+    site: PropTypes.shape({
+      siteMetadata: PropTypes.shape({
+        title: PropTypes.string,
+      }),
+    }),
+  }),
+  location: PropTypes.object,
+}
