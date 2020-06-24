@@ -11,7 +11,7 @@ exports.createPages = async ({ graphql, actions }) => {
         allMdx(
           ${
             process.env.NODE_ENV === 'production'
-              ? 'filter: { frontmatter: { draft: { eq: false } } }'
+              ? 'filter: { frontmatter: { draft: { ne: true } } }'
               : ''
           }
           sort: { fields: [frontmatter___date], order: DESC }
