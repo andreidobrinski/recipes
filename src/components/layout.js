@@ -8,7 +8,7 @@ const Layout = ({ location, title, children }) => {
     query {
       file(relativePath: { eq: "logo.png" }) {
         childImageSharp {
-          fluid {
+          fluid(quality: 100) {
             ...GatsbyImageSharpFluid
           }
         }
