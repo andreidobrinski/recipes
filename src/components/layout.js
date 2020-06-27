@@ -1,11 +1,40 @@
 import React from 'react'
-import { Link } from 'gatsby'
-
+import { Link, useStaticQuery, graphql } from 'gatsby'
+import Img from 'gatsby-image'
 import { rhythm, scale } from '../utils/typography'
 
 const Layout = ({ location, title, children }) => {
+  const data = useStaticQuery(graphql`
+    query {
+      file(relativePath: { eq: "logo.png" }) {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+  `)
   const rootPath = `/`
   let header
+  const HeaderLink = ({ maxWidth }) => (
+    <Link
+      style={{
+        boxShadow: `none`,
+        color: `inherit`,
+        display: 'flex',
+        alignItems: 'flex-end',
+      }}
+      to="/"
+    >
+      <Img
+        fluid={data.file.childImageSharp.fluid}
+        alt="Gatsby Docs are awesome"
+        style={{ width: '30%', maxWidth: `${maxWidth}px`, marginRight: '8px' }}
+      />
+      {title}
+    </Link>
+  )
 
   if (location.pathname === rootPath) {
     header = (
@@ -16,15 +45,7 @@ const Layout = ({ location, title, children }) => {
           marginTop: 0,
         }}
       >
-        <Link
-          style={{
-            boxShadow: `none`,
-            color: `inherit`,
-          }}
-          to={`/`}
-        >
-          {title}
-        </Link>
+        <HeaderLink maxWidth={80} />
       </h1>
     )
   } else {
@@ -34,15 +55,7 @@ const Layout = ({ location, title, children }) => {
           marginTop: 0,
         }}
       >
-        <Link
-          style={{
-            boxShadow: `none`,
-            color: `inherit`,
-          }}
-          to={`/`}
-        >
-          {title}
-        </Link>
+        <HeaderLink maxWidth={40} />
       </h2>
     )
   }

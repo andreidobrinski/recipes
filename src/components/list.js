@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
+import { motion } from 'framer-motion'
+import { CheckmarkButton } from './checkmark-button'
 
 const List = ({ children }) => {
   const listItems = children.map(child => <ListItem name={child} key={child} />)
@@ -9,29 +11,29 @@ const List = ({ children }) => {
 }
 
 const ListItem = ({ name }) => {
-  const [checked, setChecked] = useState(false)
+  const [isChecked, setChecked] = useState(false)
 
   return (
-    <li>
-      <Label checked={checked}>
-        <input
-          type="checkbox"
-          checked={checked}
-          onChange={() => setChecked(!checked)}
-        />
-        {name}
-      </Label>
-    </li>
+    <Wrap>
+      <CheckmarkButton
+        isChecked={isChecked}
+        handleCheck={() => setChecked(!isChecked)}
+        name={name}
+      />
+      <Label isChecked={isChecked}>{name}</Label>
+    </Wrap>
   )
 }
 
-const Label = styled.label`
-  text-decoration: ${props => (props.checked ? 'line-through' : 'none')};
+const Wrap = styled(motion.li)`
   display: flex;
-  align-items: baseline;
-  input {
-    margin-right: 8px;
-  }
+  align-items: center;
+`
+
+const Label = styled.p`
+  line-height: initial;
+  margin: 0;
+  text-decoration: ${props => (props.isChecked ? 'line-through' : 'none')};
 `
 
 export default List

@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `✅ Recipes`,
+    title: `Recipes`,
     author: {
       name: `Andrei Dobrinski`,
       summary: `A web developer that likes to cook.`,
@@ -66,7 +66,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        //trackingId: `ADD YOUR TRACKING ID HERE`,
+        // trackingId: `ADD YOUR TRACKING ID HERE`,
       },
     },
     `gatsby-plugin-feed-mdx`,
@@ -79,7 +79,7 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#ffffff`,
         display: `minimal-ui`,
-        icon: `content/assets/gatsby-icon.png`,
+        icon: `content/assets/logo.png`,
       },
     },
     `gatsby-plugin-react-helmet`,
