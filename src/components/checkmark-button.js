@@ -37,6 +37,7 @@ const Button = styled(motion.button).attrs(() => ({
   border-radius: 50%;
   width: 30px;
   height: 30px;
+  min-width: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
