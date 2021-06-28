@@ -67,11 +67,11 @@
     "extends": "react-app"
   },
   "scripts": {
-    "build": "gatsby build",
+    "build": "gatsby build --prefix-paths",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
-    "serve": "gatsby serve",
+    "serve": "gatsby clean && gatsby build --prefix-paths && gatsby serve --prefix-paths",
     "clean": "gatsby clean",
     "reserve": "gatsby clean && gatsby build && gatsby serve",
     "deploy": "gatsby build --prefix-paths && gh-pages -d public",
